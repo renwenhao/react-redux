@@ -9,7 +9,11 @@ export default class extends React.Component{
         super(props);
     }
     componentWillMount(){
+        const {store} = this.context;
         this.changeColor();
+        store.subdiscrbi(()=>{
+            this.changeColor();
+        });
     }
     changeColor(){
         const {store} = this.context;
